@@ -47,6 +47,19 @@ src/
 └── main.tsx         # نقطه ورود React
 ```
 
+## انتشار
+
+نسخه Production روی GitHub Pages منتشر می‌شود:
+`https://amiroo4522855-wq.github.io/webana/`
+
+برای ساخت خروجی سازگار با مسیر مخزن:
+
+```bash
+npx vite build --base=/webana/
+cp dist/index.html dist/404.html
+touch dist/.nojekyll
+```
+
 ## سیستم طراحی
 
 - فونت Vazirmatn به‌صورت محلی در bundle قرار می‌گیرد و درخواست فونت به CDN ندارد.
