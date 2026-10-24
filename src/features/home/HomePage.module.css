@@ -1,0 +1,416 @@
+.main {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(20rem, 0.97fr);
+  align-items: center;
+  gap: clamp(var(--space-10), 6vw, var(--space-24));
+  width: 100%;
+}
+
+.content {
+  max-width: 38rem;
+  animation: content-enter var(--transition-slow) both;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-0) var(--space-0) var(--space-5);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.eyebrow > span {
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gold);
+}
+
+.content h1 {
+  margin: var(--space-0);
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+.content h1 > span {
+  color: var(--color-primary);
+  background: linear-gradient(
+    to top,
+    var(--color-primary-soft) 0 12%,
+    transparent 12% 100%
+  );
+}
+
+.description {
+  max-width: 35rem;
+  margin: var(--space-6) var(--space-0) var(--space-0);
+  color: var(--color-muted);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin-block-start: var(--space-8);
+}
+
+.experienceNote {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block-start: var(--space-8);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-surface) 84%, transparent);
+}
+
+.noteIcon {
+  display: grid;
+  flex: 0 0 auto;
+  width: var(--control-height-sm);
+  height: var(--control-height-sm);
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.noteCopy {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.noteCopy strong {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.noteCopy > span {
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+}
+
+.visual {
+  position: relative;
+  min-height: clamp(27rem, 40vw, 34rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-on-visual) 10%, transparent);
+  border-radius: var(--radius-xl);
+  background: var(--color-visual);
+  box-shadow: var(--shadow-lg);
+  animation: visual-enter var(--transition-slow) both;
+}
+
+.visual::before {
+  position: absolute;
+  inset: var(--space-0);
+  background-image: linear-gradient(
+      color-mix(in srgb, var(--color-on-visual) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-on-visual) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: var(--space-10) var(--space-10);
+  content: '';
+  mask-image: linear-gradient(to bottom, black, transparent 95%);
+  pointer-events: none;
+}
+
+.visual::after {
+  position: absolute;
+  inset-block-end: -9rem;
+  inset-inline-start: -7rem;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-primary) 22%, transparent);
+  content: '';
+  filter: blur(3rem);
+  pointer-events: none;
+}
+
+.visualInner {
+  position: absolute;
+  z-index: 1;
+  inset: 9%;
+  display: grid;
+  place-items: center;
+}
+
+.layerBack,
+.layerMiddle,
+.brandCard {
+  position: absolute;
+  inset: 8% 15%;
+  border-radius: var(--radius-lg);
+}
+
+.layerBack {
+  border: 1px solid color-mix(in srgb, var(--color-on-visual) 26%, transparent);
+  background: color-mix(in srgb, var(--color-on-visual) 4%, transparent);
+  transform: rotate(12deg);
+}
+
+.layerMiddle {
+  border: 1px solid color-mix(in srgb, var(--color-on-visual) 12%, transparent);
+  background: var(--color-visual-layer);
+  box-shadow: var(--shadow-md);
+  transform: rotate(-8deg);
+}
+
+.brandCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: clamp(var(--space-5), 3vw, var(--space-8));
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-ink);
+  text-align: center;
+  transform: rotate(2deg);
+}
+
+.cardKicker {
+  position: absolute;
+  inset-block-start: var(--space-6);
+  color: var(--color-muted);
+  font-family: var(--font-family-latin);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.2em;
+}
+
+.heroMark {
+  width: clamp(var(--space-16), 7vw, 5.5rem);
+  height: clamp(var(--space-16), 7vw, 5.5rem);
+  margin-block-end: var(--space-4);
+  color: var(--color-primary);
+  filter: drop-shadow(0 0.85rem 1rem color-mix(in srgb, var(--color-primary) 15%, transparent));
+}
+
+.cardWord {
+  font-family: var(--font-family-latin);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-brand);
+}
+
+.cardRule {
+  width: var(--space-8);
+  height: 3px;
+  margin-block: var(--space-4) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-gold);
+}
+
+.cardCaption {
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-body);
+}
+
+.corner {
+  position: absolute;
+  z-index: 2;
+  width: var(--space-5);
+  height: var(--space-5);
+  border-color: var(--color-gold);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.cornerTop {
+  inset-block-start: var(--space-6);
+  inset-inline-start: var(--space-6);
+  border-block-start: 1px solid;
+  border-inline-start: 1px solid;
+}
+
+.cornerBottom {
+  inset-block-end: var(--space-6);
+  inset-inline-end: var(--space-6);
+  border-block-end: 1px solid;
+  border-inline-end: 1px solid;
+}
+
+.pixelPrimary,
+.pixelSecondary {
+  position: absolute;
+  z-index: 2;
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--space-1);
+  background: var(--color-primary);
+  pointer-events: none;
+}
+
+.pixelPrimary {
+  inset-block-start: 15%;
+  inset-inline-end: 10%;
+  background: var(--color-on-visual);
+  transform: rotate(18deg);
+}
+
+.pixelSecondary {
+  inset-block-end: 13%;
+  inset-inline-start: 11%;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+@keyframes content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-3));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(var(--space-0));
+  }
+}
+
+@keyframes visual-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-4));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(var(--space-0));
+  }
+}
+
+@media (max-width: 64rem) {
+  .hero {
+    gap: var(--space-8);
+  }
+
+  .content h1 {
+    font-size: clamp(2.65rem, 5.4vw, 3.75rem);
+  }
+
+  .description {
+    font-size: var(--font-size-md);
+  }
+
+  .visual {
+    min-height: 27rem;
+  }
+
+  .layerBack,
+  .layerMiddle,
+  .brandCard {
+    inset-inline: 11%;
+  }
+}
+
+@media (max-width: 48rem) {
+  .main {
+    padding-block: var(--space-12);
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .content {
+    max-width: 40rem;
+  }
+
+  .content h1 {
+    font-size: var(--font-size-display-sm);
+  }
+
+  .description {
+    max-width: 37rem;
+  }
+
+  .visual {
+    min-height: min(32rem, 100vw);
+  }
+
+  .layerBack,
+  .layerMiddle,
+  .brandCard {
+    inset: 7% 20%;
+  }
+}
+
+@media (max-width: 30rem) {
+  .main {
+    padding-block: var(--space-10);
+  }
+
+  .hero {
+    gap: var(--space-10);
+  }
+
+  .content h1 {
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
+  }
+
+  .eyebrow {
+    margin-block-end: var(--space-4);
+    font-size: var(--font-size-xs);
+  }
+
+  .description {
+    margin-block-start: var(--space-5);
+    font-size: var(--font-size-base);
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+
+  .experienceNote {
+    width: 100%;
+    margin-block-start: var(--space-6);
+  }
+
+  .noteCopy > span {
+    font-size: var(--font-size-2xs);
+  }
+
+  .visual {
+    min-height: min(28rem, 112vw);
+  }
+
+  .visualInner {
+    inset: 6%;
+  }
+
+  .layerBack,
+  .layerMiddle,
+  .brandCard {
+    inset: 8% 14%;
+  }
+
+  .cardKicker {
+    inset-block-start: var(--space-5);
+    font-size: 0.625rem;
+  }
+}

@@ -1,0 +1,25 @@
+import '@fontsource-variable/vazirmatn';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+import { App } from './app/App';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { applyDocumentLocale, defaultLocale } from './core/i18n/config';
+import './styles/tokens.css';
+import './styles/global.css';
+
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error('The application root element was not found.');
+}
+
+applyDocumentLocale(defaultLocale);
+
+createRoot(rootElement).render(
+  <StrictMode>
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  </StrictMode>,
+);

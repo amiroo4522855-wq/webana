@@ -1,0 +1,40 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 1.75rem;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.neutral {
+  border-color: var(--color-border);
+  background: var(--color-surface-subtle);
+  color: var(--color-muted);
+}
+
+.info {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.success {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.danger {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.gold {
+  border-color: color-mix(in srgb, var(--color-gold) 28%, transparent);
+  background: var(--color-gold-soft);
+  color: var(--color-gold-text);
+}

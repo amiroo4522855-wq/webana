@@ -1,0 +1,77 @@
+.page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--layout-gutter);
+  overflow: hidden;
+  background: radial-gradient(
+      circle at 50% 110%,
+      color-mix(in srgb, var(--color-primary-soft) 80%, transparent),
+      transparent 42%
+    ),
+    var(--color-canvas);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block-end: var(--space-6);
+  color: var(--color-primary);
+  font-family: var(--font-family-latin);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-brand);
+}
+
+.mark {
+  width: var(--control-height-sm);
+  height: var(--control-height-sm);
+}
+
+.card {
+  width: min(100%, 35rem);
+  padding: clamp(var(--space-8), 6vw, var(--space-16));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: var(--space-0) var(--space-0) var(--space-4);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.card h1 {
+  margin: var(--space-0);
+  font-size: clamp(var(--font-size-xl), 4vw, var(--font-size-3xl));
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-heading);
+}
+
+.description {
+  margin: var(--space-4) var(--space-0) var(--space-0);
+  color: var(--color-muted);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-block-start: var(--space-8);
+}
+
+@media (max-width: 30rem) {
+  .actions > * {
+    width: 100%;
+  }
+}
