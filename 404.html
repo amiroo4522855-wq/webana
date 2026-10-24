@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light" data-theme-mode="system">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ویبانا؛ بستری برای ساخت وب‌سایت بدون کدنویسی."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="/webana/favicon.svg" />
+    <title>ویبانا | WEBANA</title>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        let mode = 'system';
+
+        try {
+          const storedMode = window.localStorage.getItem('webana-theme');
+          if (['system', 'light', 'dark'].includes(storedMode)) {
+            mode = storedMode;
+          }
+        } catch {
+          // Use the system preference when storage is unavailable.
+        }
+
+        const resolvedTheme =
+          mode === 'system'
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : mode;
+
+        root.dataset.theme = resolvedTheme;
+        root.dataset.themeMode = mode;
+        root.style.colorScheme = resolvedTheme;
+      })();
+    </script>
+    <script type="module" crossorigin src="/webana/assets/index-DcMxi7iH.js"></script>
+    <link rel="stylesheet" crossorigin href="/webana/assets/index-BrCkM5VI.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>برای استفاده از ویبانا، جاوااسکریپت را فعال کنید.</noscript>
+  </body>
+</html>
